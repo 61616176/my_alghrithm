@@ -1,0 +1,92 @@
+
+C5.0 [Release 2.11a]  	Mon Apr  8 10:45:01 2024
+--------------------
+
+    Options:
+	Application `/home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/5/1/automobile'
+
+Read 78 cases (64 attributes) from /home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/5/1/automobile.data
+
+Decision tree:
+
+Num-of-doors_four <= 0:
+:...City-mpg <= 0.2272727: 5.0 (6)
+:   City-mpg > 0.2272727:
+:   :...Make_volkswagen > 0: 4.0 (2/1)
+:       Make_volkswagen <= 0:
+:       :...Make_mitsubishi > 0: 4.0 (3)
+:           Make_mitsubishi <= 0:
+:           :...Wheel-base <= 0.1431035: 4.0 (3)
+:               Wheel-base > 0.1431035:
+:               :...Engine-size <= 0.4219653: 3.0 (14/1)
+:                   Engine-size > 0.4219653: 4.0 (2)
+Num-of-doors_four > 0:
+:...Make_saab > 0: 4.0 (2)
+    Make_saab <= 0:
+    :...Make_audi > 0: 4.0 (3/1)
+        Make_audi <= 0:
+        :...Height <= 0.2307692: 3.0 (6)
+            Height > 0.2307692:
+            :...Highway-mpg > 0.5416666: 3.0 (4/2)
+                Highway-mpg <= 0.5416666:
+                :...Normalized-losses <= 0.07591623: 1.0 (7)
+                    Normalized-losses > 0.07591623:
+                    :...Length <= 0.7504065: 2.0 (23/1)
+                        Length > 0.7504065: 1.0 (3/1)
+
+
+Evaluation on training data (78 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    13    8(10.3%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	                 1                      (a): class 0.0
+	           8     2                      (b): class 1.0
+	                22     2                (c): class 2.0
+	                      21     1          (d): class 3.0
+	                       1    13          (e): class 4.0
+	                             1     6    (f): class 5.0
+
+
+	Attribute usage:
+
+	    100%  Num-of-doors_four
+	     62%  Make_saab
+	     59%  Make_audi
+	     55%  Height
+	     47%  Highway-mpg
+	     42%  Normalized-losses
+	     38%  City-mpg
+	     37%  Length
+	     32%  Make_volkswagen
+	     29%  Make_mitsubishi
+	     24%  Wheel-base
+	     21%  Engine-size
+
+
+Evaluation on test data (80 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    13   33(41.2%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	                 2                      (a): class 0.0
+	           4     5     1                (b): class 1.0
+	           3    16     3           2    (c): class 2.0
+	                 4    16     2     1    (d): class 3.0
+	                 3     5     6     1    (e): class 4.0
+	                             1     5    (f): class 5.0
+
+
+Time: 0.0 secs

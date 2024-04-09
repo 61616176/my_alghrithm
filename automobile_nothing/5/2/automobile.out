@@ -1,0 +1,85 @@
+
+C5.0 [Release 2.11a]  	Mon Apr  8 10:45:01 2024
+--------------------
+
+    Options:
+	Application `/home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/5/2/automobile'
+
+Read 79 cases (64 attributes) from /home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/5/2/automobile.data
+
+Decision tree:
+
+Make_volvo > 0:
+:...Normalized-losses <= 0.2048193: 1.0 (6)
+:   Normalized-losses > 0.2048193: 0.0 (2)
+Make_volvo <= 0:
+:...Make_volkswagen > 0: 4.0 (5)
+    Make_volkswagen <= 0:
+    :...Wheel-base <= 0.12:
+        :...Make_subaru <= 0: 3.0 (19/2)
+        :   Make_subaru > 0: 4.0 (3)
+        Wheel-base > 0.12:
+        :...Num-of-doors_four > 0:
+            :...Make_mercedes-benz <= 0: 2.0 (26/5)
+            :   Make_mercedes-benz > 0: 1.0 (2)
+            Num-of-doors_four <= 0:
+            :...Make_toyota > 0: 4.0 (5/1)
+                Make_toyota <= 0:
+                :...Make_bmw > 0: 2.0 (2/1)
+                    Make_bmw <= 0:
+                    :...Normalized-losses <= 0.25: 2.0 (2)
+                        Normalized-losses > 0.25: 5.0 (7/3)
+
+
+Evaluation on training data (79 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    11   12(15.2%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	     2                                  (a): class 0.0
+	           8     2                      (b): class 1.0
+	                24                      (c): class 2.0
+	                 3    17           2    (d): class 3.0
+	                 2     1    12          (e): class 4.0
+	                       1     1     4    (f): class 5.0
+
+
+	Attribute usage:
+
+	    100%  Make_volvo
+	     90%  Make_volkswagen
+	     84%  Wheel-base
+	     57%  Num-of-doors_four
+	     35%  Make_mercedes-benz
+	     28%  Make_subaru
+	     23%  Normalized-losses
+	     22%  Make_toyota
+	     15%  Make_bmw
+
+
+Evaluation on test data (79 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    11   28(35.4%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	     1                                  (a): class 0.0
+	           3     7                      (b): class 1.0
+	                23     1                (c): class 2.0
+	                 4    17     1     1    (d): class 3.0
+	                 4     6     4          (e): class 4.0
+	                       2     2     3    (f): class 5.0
+
+
+Time: 0.0 secs

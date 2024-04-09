@@ -1,0 +1,91 @@
+
+C5.0 [Release 2.11a]  	Sun Mar 31 12:57:56 2024
+--------------------
+
+    Options:
+	Application `/home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/2/1/automobile'
+
+Read 139 cases (64 attributes) from /home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/2/1/automobile.data
+
+Decision tree:
+
+Make_volvo > 0.5000036:
+:...Curb-weight <= 0.578564: 0.0 (24)
+:   Curb-weight > 0.578564: 1.0 (4)
+Make_volvo <= 0.5000036:
+:...Num-of-doors_four <= 0.5013433:
+    :...City-mpg > 0.250044: 4.0 (29/13)
+    :   City-mpg <= 0.250044:
+    :   :...Make_bmw <= 0.5023607: 5.0 (23/2)
+    :       Make_bmw > 0.5023607: 4.0 (3/1)
+    Num-of-doors_four > 0.5013433:
+    :...Fuel-system_2bbl > 0.5034141:
+        :...Peak-rpm <= 0.3061224: 2.0 (10)
+        :   Peak-rpm > 0.3061224: 3.0 (10/1)
+        Fuel-system_2bbl <= 0.5034141:
+        :...Peak-rpm <= 0.4381682:
+            :...Normalized-losses > 0.2141522: 2.0 (5)
+            :   Normalized-losses <= 0.2141522:
+            :   :...Wheel-base <= 0.4498162: 2.0 (3)
+            :       Wheel-base > 0.4498162: 1.0 (14)
+            Peak-rpm > 0.4381682:
+            :...Make_honda > 0.5030577: 2.0 (2)
+                Make_honda <= 0.5030577:
+                :...Fuel-system_mpfi <= 0.4992477: 1.0 (2)
+                    Fuel-system_mpfi > 0.4992477: 4.0 (10)
+
+
+Evaluation on training data (139 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    13   19(13.7%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	    24                                  (a): class 0.0
+	          20                            (b): class 1.0
+	                20     1     2     1    (c): class 2.0
+	                       9    10     3    (d): class 3.0
+	                            26     2    (e): class 4.0
+	                                  21    (f): class 5.0
+
+
+	Attribute usage:
+
+	    100%  Make_volvo
+	     81%  Num-of-doors_four
+	     42%  Peak-rpm
+	     42%  City-mpg
+	     42%  Fuel-system_2bbl
+	     25%  Make_bmw
+	     21%  Curb-weight
+	     16%  Normalized-losses
+	     12%  Wheel-base
+	     12%  Make_honda
+	     10%  Fuel-system_mpfi
+
+
+Evaluation on test data (80 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    13   35(43.8%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	     1     1                            (a): class 0.0
+	     1     7           2                (b): class 1.0
+	                19     2     3          (c): class 2.0
+	           1     1     5    15     1    (d): class 3.0
+	                 2           8     5    (e): class 4.0
+	                             1     5    (f): class 5.0
+
+
+Time: 0.0 secs

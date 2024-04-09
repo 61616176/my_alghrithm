@@ -1,0 +1,85 @@
+
+See5 [Release 2.11a]  	Sat Mar 23 11:14:46 2024
+--------------------
+
+Read 143 cases (64 attributes) from automobile.1.1.train.oversampled.data
+
+Decision tree:
+
+Make_volvo > 0.5007406:
+:...Price <= 0.3221719: 0.0 (24)
+:   Price > 0.3221719: 1.0 (3)
+Make_volvo <= 0.5007406:
+:...Normalized-losses <= 0.06572751: 1.0 (18)
+    Normalized-losses > 0.06572751:
+    :...Num-of-doors_two > 0.00090298:
+        :...Engine-size <= 0.2454791:
+        :   :...Fuel-system_idi <= 0.00012751: 3.0 (19/6)
+        :   :   Fuel-system_idi > 0.00012751: 4.0 (7)
+        :   Engine-size > 0.2454791:
+        :   :...Normalized-losses <= 0.3810834: 4.0 (8/2)
+        :       Normalized-losses > 0.3810834: 5.0 (26)
+        Num-of-doors_two <= 0.00090298:
+        :...Fuel-system_spdi > 0.4999856: 1.0 (3)
+            Fuel-system_spdi <= 0.4999856:
+            :...Make_saab > 0: 4.0 (2)
+                Make_saab <= 0:
+                :...Wheel-base <= 0.3777777: 3.0 (6)
+                    Wheel-base > 0.3777777:
+                    :...Make_audi <= 0: 2.0 (25/2)
+                        Make_audi > 0: 3.0 (2)
+
+
+Evaluation on training data (143 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    12   10( 7.0%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	    24                                  (a): class 0.0
+	          24                            (b): class 1.0
+	                23           1          (c): class 2.0
+	                 1    21     1          (d): class 3.0
+	                 1     6    15          (e): class 4.0
+	                                  26    (f): class 5.0
+
+
+	Attribute usage:
+
+	    100%  Make_volvo
+	     82%  Normalized-losses
+	     70%  Num-of-doors_two
+	     43%  Engine-size
+	     30%  Fuel-system_spdi
+	     29%  Make_saab
+	     27%  Wheel-base
+	     23%  Make_audi
+	     20%  Price
+	     19%  Fuel-system_idi
+
+
+Evaluation on test data (80 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    12   29(36.3%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	           2                            (a): class 0.0
+	     1     4     5                      (b): class 1.0
+	           1    19     1     2     1    (c): class 2.0
+	           2     1    16     3     1    (d): class 3.0
+	                 4     4     6     1    (e): class 4.0
+	                                   6    (f): class 5.0
+
+
+Time: 0.0 secs

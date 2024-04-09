@@ -1,0 +1,91 @@
+
+C5.0 [Release 2.11a]  	Sun Mar 31 12:57:56 2024
+--------------------
+
+    Options:
+	Application `/home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/4/1/automobile'
+
+Read 139 cases (64 attributes) from /home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/4/1/automobile.data
+
+Decision tree:
+
+Make_volvo > 0.4992478:
+:...Price <= 0.3180024: 0.0 (24)
+:   Price > 0.3180024: 1.0 (6)
+Make_volvo <= 0.4992478:
+:...Width > 0.3137283:
+    :...Num-of-doors_two > 0.4997439: 5.0 (22/1)
+    :   Num-of-doors_two <= 0.4997439:
+    :   :...Make_saab > 0.5013891: 4.0 (2)
+    :       Make_saab <= 0.5013891:
+    :       :...Normalized-losses <= 0.2358516: 1.0 (12)
+    :           Normalized-losses > 0.2358516: 2.0 (7/1)
+    Width <= 0.3137283:
+    :...Fuel-system_spdi > 0.5011387: 1.0 (4/2)
+        Fuel-system_spdi <= 0.5011387:
+        :...Make_dodge > 0.5034389: 3.0 (5)
+            Make_dodge <= 0.5034389:
+            :...Make_volkswagen > 0.00016897: 4.0 (14)
+                Make_volkswagen <= 0.00016897:
+                :...Wheel-base <= 0.2931034:
+                    :...Length <= 0.2396552: 4.0 (7/1)
+                    :   Length > 0.2396552: 3.0 (10)
+                    Wheel-base > 0.2931034:
+                    :...Width <= 0.2329724: 2.0 (19/1)
+                        Width > 0.2329724: 4.0 (7/1)
+
+
+Evaluation on training data (139 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    13    8( 5.8%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	    24                                  (a): class 0.0
+	          19           1                (b): class 1.0
+	                24                      (c): class 2.0
+	           2     2    15     2     1    (d): class 3.0
+	                            28          (e): class 4.0
+	                                  21    (f): class 5.0
+
+
+	Attribute usage:
+
+	    100%  Make_volvo
+	     79%  Width
+	     48%  Fuel-system_spdi
+	     46%  Make_dodge
+	     42%  Make_volkswagen
+	     41%  Wheel-base
+	     34%  Num-of-doors_two
+	     22%  Price
+	     17%  Length
+	     17%  Make_saab
+	     15%  Normalized-losses
+
+
+Evaluation on test data (80 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    13   27(33.8%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	           2                            (a): class 0.0
+	     1     7     1     1                (b): class 1.0
+	                21     1     1     1    (c): class 2.0
+	           1     4    11     5     2    (d): class 3.0
+	                 3     1    11          (e): class 4.0
+	           1     1           1     3    (f): class 5.0
+
+
+Time: 0.0 secs

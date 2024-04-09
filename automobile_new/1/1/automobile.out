@@ -1,0 +1,95 @@
+
+C5.0 [Release 2.11a]  	Sun Mar 31 12:57:56 2024
+--------------------
+
+    Options:
+	Application `/home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/1/1/automobile'
+
+Read 138 cases (64 attributes) from /home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/1/1/automobile.data
+
+Decision tree:
+
+Make_volvo > 0.4998825:
+:...Wheel-base <= 0.6352001: 0.0 (23)
+:   Wheel-base > 0.6352001: 1.0 (6)
+Make_volvo <= 0.4998825:
+:...Width <= 0.1084337:
+    :...Make_subaru > 0.499472: 4.0 (4)
+    :   Make_subaru <= 0.499472:
+    :   :...Wheel-base <= 0.1563786: 3.0 (20)
+    :       Wheel-base > 0.1563786: 2.0 (3)
+    Width > 0.1084337:
+    :...Normalized-losses > 0.5643939:
+        :...Body-style_sedan <= 0.5014219:
+        :   :...City-mpg <= 0.5337348: 5.0 (21)
+        :   :   City-mpg > 0.5337348: 4.0 (2)
+        :   Body-style_sedan > 0.5014219:
+        :   :...Stroke <= 0.3508287: 4.0 (2)
+        :       Stroke > 0.3508287: 2.0 (5)
+        Normalized-losses <= 0.5643939:
+        :...Wheel-base > 0.4146488: 1.0 (12)
+            Wheel-base <= 0.4146488:
+            :...Fuel-system_spdi > 0.5020248: 1.0 (2)
+                Fuel-system_spdi <= 0.5020248:
+                :...Fuel-system_2bbl <= 0.5016337:
+                    :...Width <= 0.2455907: 2.0 (5)
+                    :   Width > 0.2455907: 4.0 (21/1)
+                    Fuel-system_2bbl > 0.5016337:
+                    :...Num-of-doors_four <= 0: 3.0 (2)
+                        Num-of-doors_four > 0: 2.0 (10/1)
+
+
+Evaluation on training data (138 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    15    2( 1.4%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	    23                                  (a): class 0.0
+	          20                            (b): class 1.0
+	                22           1          (c): class 2.0
+	                 1    22                (d): class 3.0
+	                            28          (e): class 4.0
+	                                  21    (f): class 5.0
+
+
+	Attribute usage:
+
+	    100%  Make_volvo
+	     80%  Width
+	     78%  Wheel-base
+	     62%  Normalized-losses
+	     32%  Fuel-system_spdi
+	     31%  Fuel-system_2bbl
+	     24%  Make_subaru
+	     22%  Body-style_sedan
+	     17%  City-mpg
+	     11%  Num-of-doors_four
+	      6%  Stroke
+
+
+Evaluation on test data (80 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    15   26(32.5%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	     2                                  (a): class 0.0
+	     3     7                            (b): class 1.0
+	           2    18     1     3          (c): class 2.0
+	           1     6    15           1    (d): class 3.0
+	                 3     3     7     2    (e): class 4.0
+	                       1           5    (f): class 5.0
+
+
+Time: 0.0 secs

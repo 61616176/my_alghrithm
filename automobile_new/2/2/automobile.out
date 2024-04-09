@@ -1,0 +1,103 @@
+
+C5.0 [Release 2.11a]  	Sun Mar 31 12:57:56 2024
+--------------------
+
+    Options:
+	Application `/home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/2/2/automobile'
+
+Read 144 cases (64 attributes) from /home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/2/2/automobile.data
+
+Decision tree:
+
+Make_volvo > 0.500025:
+:...Normalized-losses <= 0.1758773: 1.0 (12)
+:   Normalized-losses > 0.1758773: 0.0 (24)
+Make_volvo <= 0.500025:
+:...Height <= 0.07450018: 5.0 (12)
+    Height > 0.07450018:
+    :...Wheel-base > 0.6:
+        :...Num-of-cylinders_five > 0.5013696: 3.0 (2)
+        :   Num-of-cylinders_five <= 0.5013696:
+        :   :...Price <= 0.3452578: 1.0 (8)
+        :       Price > 0.3452578: 2.0 (9)
+        Wheel-base <= 0.6:
+        :...Highway-mpg <= 0.3521146:
+            :...Drive-wheels_fwd <= 0.4989407: 2.0 (2/1)
+            :   Drive-wheels_fwd > 0.4989407:
+            :   :...Num-of-doors_two <= 0.4992802: 4.0 (2)
+            :       Num-of-doors_two > 0.4992802: 5.0 (12)
+            Highway-mpg > 0.3521146:
+            :...Body-style_hardtop > 0.00044772: 4.0 (14)
+                Body-style_hardtop <= 0.00044772:
+                :...Fuel-system_idi > 0.00068832: 4.0 (6)
+                    Fuel-system_idi <= 0.00068832:
+                    :...Normalized-losses <= 0.2696335:
+                        :...Num-of-doors_four > 0: 2.0 (16/3)
+                        :   Num-of-doors_four <= 0:
+                        :   :...Make_subaru <= 0: 3.0 (5/1)
+                        :       Make_subaru > 0: 4.0 (2)
+                        Normalized-losses > 0.2696335:
+                        :...Width <= 0.1516853: 3.0 (10)
+                            Width > 0.1516853:
+                            :...Compression-ratio <= 0.1312: 3.0 (3)
+                                Compression-ratio > 0.1312: 4.0 (5)
+
+
+Evaluation on training data (144 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    17    5( 3.5%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	    24                                  (a): class 0.0
+	          20                            (b): class 1.0
+	                23     1                (c): class 2.0
+	                 3    19                (d): class 3.0
+	                 1          29          (e): class 4.0
+	                                  24    (f): class 5.0
+
+
+	Attribute usage:
+
+	    100%  Make_volvo
+	     76%  Height
+	     68%  Wheel-base
+	     58%  Normalized-losses
+	     54%  Highway-mpg
+	     43%  Body-style_hardtop
+	     34%  Fuel-system_idi
+	     19%  Num-of-doors_four
+	     16%  Width
+	     15%  Num-of-cylinders_five
+	     13%  Price
+	     13%  Drive-wheels_fwd
+	     11%  Num-of-doors_two
+	      9%  Compression-ratio
+	      8%  Make_subaru
+
+
+Evaluation on test data (79 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    17   25(31.6%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	     1                                  (a): class 0.0
+	           5     1     4                (b): class 1.0
+	                19     2     3          (c): class 2.0
+	                 4    17     1     1    (d): class 3.0
+	                 4     2     8          (e): class 4.0
+	                 3                 4    (f): class 5.0
+
+
+Time: 0.0 secs

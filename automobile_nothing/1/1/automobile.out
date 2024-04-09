@@ -1,0 +1,95 @@
+
+C5.0 [Release 2.11a]  	Mon Apr  8 10:45:01 2024
+--------------------
+
+    Options:
+	Application `/home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/1/1/automobile'
+
+Read 78 cases (64 attributes) from /home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/1/1/automobile.data
+
+Decision tree:
+
+Make_volvo > 0: 1.0 (4/1)
+Make_volvo <= 0:
+:...Wheel-base <= 0.1563786:
+    :...Price > 0.2755862: 5.0 (2)
+    :   Price <= 0.2755862:
+    :   :...Make_subaru <= 0: 3.0 (21/1)
+    :       Make_subaru > 0: 4.0 (2)
+    Wheel-base > 0.1563786:
+    :...Num-of-cylinders_five > 0: 1.0 (2)
+        Num-of-cylinders_five <= 0:
+        :...Normalized-losses <= 0.09469696: 1.0 (4)
+            Normalized-losses > 0.09469696:
+            :...Make_mitsubishi > 0: 1.0 (3/2)
+                Make_mitsubishi <= 0:
+                :...Make_volkswagen > 0: 4.0 (4)
+                    Make_volkswagen <= 0:
+                    :...Num-of-doors_four > 0:
+                        :...Make_saab <= 0: 2.0 (21)
+                        :   Make_saab > 0: 4.0 (2)
+                        Num-of-doors_four <= 0:
+                        :...Fuel-system_2bbl > 0: 3.0 (2)
+                            Fuel-system_2bbl <= 0:
+                            :...Length > 0.5427756: 5.0 (4)
+                                Length <= 0.5427756:
+                                :...Bore <= 0.4805825: 2.0 (2)
+                                    Bore > 0.4805825: 4.0 (5)
+
+
+Evaluation on training data (78 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    14    4( 5.1%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	           1                            (a): class 0.0
+	          10                            (b): class 1.0
+	                23                      (c): class 2.0
+	           1          22                (d): class 3.0
+	                       1    13          (e): class 4.0
+	           1                       6    (f): class 5.0
+
+
+	Attribute usage:
+
+	    100%  Make_volvo
+	     95%  Wheel-base
+	     63%  Num-of-cylinders_five
+	     60%  Normalized-losses
+	     56%  Make_mitsubishi
+	     53%  Make_volkswagen
+	     47%  Num-of-doors_four
+	     32%  Price
+	     31%  Make_saab
+	     29%  Make_subaru
+	     17%  Fuel-system_2bbl
+	     14%  Length
+	      9%  Bore
+
+
+Evaluation on test data (80 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    14   24(30.0%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	           2                            (a): class 0.0
+	           8     2                      (b): class 1.0
+	           2    21     1                (c): class 2.0
+	           5          17           1    (d): class 3.0
+	           1     1     6     7          (e): class 4.0
+	           1           1     1     3    (f): class 5.0
+
+
+Time: 0.0 secs

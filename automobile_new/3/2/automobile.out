@@ -1,0 +1,96 @@
+
+C5.0 [Release 2.11a]  	Sun Mar 31 12:57:56 2024
+--------------------
+
+    Options:
+	Application `/home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/3/2/automobile'
+
+Read 144 cases (64 attributes) from /home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/3/2/automobile.data
+
+Decision tree:
+
+Make_volvo > 0.00509934:
+:...Normalized-losses <= 0.1779627: 1.0 (8)
+:   Normalized-losses > 0.1779627: 0.0 (25/1)
+Make_volvo <= 0.00509934:
+:...Num-of-doors_four <= 0.5019536:
+    :...Highway-mpg <= 0.3204251: 5.0 (27/3)
+    :   Highway-mpg > 0.3204251:
+    :   :...Aspiration_std <= 0.4976377: 3.0 (3)
+    :       Aspiration_std > 0.4976377:
+    :       :...Make_mazda > 0.5026233: 3.0 (3)
+    :           Make_mazda <= 0.5026233:
+    :           :...Normalized-losses <= 0.2901788: 3.0 (6/2)
+    :               Normalized-losses > 0.2901788: 4.0 (21/1)
+    Num-of-doors_four > 0.5019536:
+    :...Make_mercedes-benz > 5.519e-05:
+        :...Make_plymouth <= 0.00011428: 1.0 (7)
+        :   Make_plymouth > 0.00011428: 4.0 (3)
+        Make_mercedes-benz <= 5.519e-05:
+        :...Make_volkswagen > 0.4999903: 4.0 (3)
+            Make_volkswagen <= 0.4999903:
+            :...Make_saab > 0: 4.0 (2)
+                Make_saab <= 0:
+                :...Make_mitsubishi > 0: 3.0 (3/1)
+                    Make_mitsubishi <= 0:
+                    :...Normalized-losses <= 0.03141361: 1.0 (2)
+                        Normalized-losses > 0.03141361:
+                        :...Wheel-base <= 0.3219696: 3.0 (7/1)
+                            Wheel-base > 0.3219696: 2.0 (24/2)
+
+
+Evaluation on training data (144 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    15   11( 7.6%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	    24                                  (a): class 0.0
+	     1    17     1     1                (b): class 1.0
+	                22     1           1    (c): class 2.0
+	                 1    18     1     2    (d): class 3.0
+	                       2    28          (e): class 4.0
+	                                  24    (f): class 5.0
+
+
+	Attribute usage:
+
+	    100%  Make_volvo
+	     79%  Num-of-doors_four
+	     69%  Normalized-losses
+	     43%  Highway-mpg
+	     40%  Make_mercedes-benz
+	     35%  Make_volkswagen
+	     34%  Make_saab
+	     33%  Make_mitsubishi
+	     27%  Wheel-base
+	     24%  Aspiration_std
+	     22%  Make_mazda
+	      9%  Make_plymouth
+
+
+Evaluation on test data (79 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    15   20(25.3%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	     1                                  (a): class 0.0
+	           8     2                      (b): class 1.0
+	                21     2           1    (c): class 2.0
+	                 2    15     5     1    (d): class 3.0
+	                 2     2     9     1    (e): class 4.0
+	                       1     1     5    (f): class 5.0
+
+
+Time: 0.0 secs

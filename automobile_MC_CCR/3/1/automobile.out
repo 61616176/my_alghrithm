@@ -1,0 +1,427 @@
+
+C5.0 [Release 2.11a]  	Thu Mar 28 16:18:34 2024
+--------------------
+
+    Options:
+	Application `/home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/3/1/automobile'
+	Boosted classifiers
+
+Read 139 cases (64 attributes) from /home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/3/1/automobile.data
+
+-----  Trial 0:  -----
+
+Decision tree:
+
+Make_volvo > 0.4991772:
+:...Horsepower <= 0.5897725: 1.0 (8)
+:   Horsepower > 0.5897725: 0.0 (24)
+Make_volvo <= 0.4991772:
+:...Wheel-base > 0.6463916: 1.0 (14/4)
+    Wheel-base <= 0.6463916:
+    :...Normalized-losses <= 0.3468914:
+        :...Make_saab > 0.00051136: 4.0 (6)
+        :   Make_saab <= 0.00051136:
+        :   :...Engine-type_l > 0.4998633: 4.0 (2)
+        :       Engine-type_l <= 0.4998633:
+        :       :...Normalized-losses <= 0.2696335: 2.0 (26/6)
+        :           Normalized-losses > 0.2696335: 3.0 (13)
+        Normalized-losses > 0.3468914:
+        :...Make_plymouth > 0.5027041: 3.0 (2)
+            Make_plymouth <= 0.5027041:
+            :...Num-of-doors_four > 0.5001503: 4.0 (6/2)
+                Num-of-doors_four <= 0.5001503:
+                :...Normalized-losses <= 0.3900523: 4.0 (10)
+                    Normalized-losses > 0.3900523:
+                    :...Make_toyota > 0.5030415: 3.0 (2)
+                        Make_toyota <= 0.5030415:
+                        :...Engine-size <= 0.2750539: 4.0 (4)
+                            Engine-size > 0.2750539: 5.0 (22/1)
+
+-----  Trial 1:  -----
+
+Decision tree:
+
+Make_volvo > 0.4991772:
+:...Horsepower <= 0.5897725: 1.0 (6.2)
+:   Horsepower > 0.5897725: 0.0 (18.7)
+Make_volvo <= 0.4991772:
+:...Make_saab > 3.365e-05:
+    :...Normalized-losses <= 0.3896895: 4.0 (6.2)
+    :   Normalized-losses > 0.3896895: 5.0 (14/0.8)
+    Make_saab <= 3.365e-05:
+    :...Make_mercedes-benz <= -0.00056393: 1.0 (6.1)
+        Make_mercedes-benz > -0.00056393:
+        :...Make_peugeot > 0.5029214: 2.0 (8.9)
+            Make_peugeot <= 0.5029214:
+            :...Wheel-base > 0.6495726: 1.0 (7.7/3)
+                Wheel-base <= 0.6495726:
+                :...Make_saab <= -3.077e-05: 4.0 (5.4)
+                    Make_saab > -3.077e-05:
+                    :...Make_volkswagen > 0: 4.0 (3.8/0.8)
+                        Make_volkswagen <= 0:
+                        :...Num-of-doors_four > 0:
+                            :...Wheel-base <= 0.3632479: 3.0 (9.9/0.8)
+                            :   Wheel-base > 0.3632479: 2.0 (23.1/6.9)
+                            Num-of-doors_four <= 0:
+                            :...Make_honda > 0: 4.0 (2.3/0.8)
+                                Make_honda <= 0:
+                                :...Bore <= 0.7580645: 3.0 (20.6/3.9)
+                                    Bore > 0.7580645: 4.0 (6.1)
+
+-----  Trial 2:  -----
+
+Decision tree:
+
+Make_volvo > 0.4991772:
+:...Horsepower <= 0.5897725: 1.0 (4.9)
+:   Horsepower > 0.5897725: 0.0 (14.6)
+Make_volvo <= 0.4991772:
+:...Make_peugeot > 0.5029214: 2.0 (7)
+    Make_peugeot <= 0.5029214:
+    :...Normalized-losses > 0.3912596:
+        :...Length <= 0.4096385: 4.0 (3)
+        :   Length > 0.4096385:
+        :   :...Body-style_sedan <= 0.5027636: 5.0 (23.6/3.6)
+        :       Body-style_sedan > 0.5027636: 4.0 (10.3/1.2)
+        Normalized-losses <= 0.3912596:
+        :...Fuel-system_spdi > 0.5014755: 1.0 (10/3)
+            Fuel-system_spdi <= 0.5014755:
+            :...Wheel-base > 0.5632629: 1.0 (12/5.8)
+                Wheel-base <= 0.5632629:
+                :...Make_mitsubishi > 0.5021214: 3.0 (4.8)
+                    Make_mitsubishi <= 0.5021214:
+                    :...Make_nissan > 0.5015959: 3.0 (4.8)
+                        Make_nissan <= 0.5015959:
+                        :...Make_mazda > 0.5023969: 3.0 (8.2/2.3)
+                            Make_mazda <= 0.5023969:
+                            :...Length <= 0.3544177: 4.0 (12.6/4.2)
+                                Length > 0.3544177:
+                                :...Width <= 0.503194: 2.0 (14)
+                                    Width > 0.503194: 4.0 (9.1)
+
+-----  Trial 3:  -----
+
+Decision tree:
+
+Make_volvo > 0.4991772:
+:...Horsepower <= 0.5897725: 1.0 (3.9)
+:   Horsepower > 0.5897725: 0.0 (11.6)
+Make_volvo <= 0.4991772:
+:...Make_saab > 3.365e-05:
+    :...Num-of-doors_two <= 0.4991392: 4.0 (4.3)
+    :   Num-of-doors_two > 0.4991392: 5.0 (9.7/1.5)
+    Make_saab <= 3.365e-05:
+    :...Height > 0.5096153:
+        :...Curb-weight <= 0.3465959: 4.0 (3.7)
+        :   Curb-weight > 0.3465959: 2.0 (24.2/1.9)
+        Height <= 0.5096153:
+        :...Normalized-losses <= 0.2434554:
+            :...Wheel-base > 0.5609215: 1.0 (2.9)
+            :   Wheel-base <= 0.5609215:
+            :   :...Horsepower <= 0.1414474: 3.0 (8.2/0.5)
+            :       Horsepower > 0.1414474: 2.0 (8.7)
+            Normalized-losses > 0.2434554:
+            :...Fuel-system_spdi > 0.5011877:
+                :...Aspiration_std <= 0: 3.0 (8.2/1.9)
+                :   Aspiration_std > 0: 1.0 (5.5)
+                Fuel-system_spdi <= 0.5011877:
+                :...City-mpg <= 0.04545454: 5.0 (3.8)
+                    City-mpg > 0.04545454:
+                    :...Make_volkswagen > 0.00013938: 5.0 (3.4/1.5)
+                        Make_volkswagen <= 0.00013938:
+                        :...Make_audi <= 0.4998063: 3.0 (36.6/8.2)
+                            Make_audi > 0.4998063: 4.0 (4.3)
+
+-----  Trial 4:  -----
+
+Decision tree:
+
+Make_volvo > 0.4991772: 0.0 (12.1/3)
+Make_volvo <= 0.4991772:
+:...Wheel-base > 0.6463916:
+    :...Body-style_wagon <= 0.0014435: 2.0 (11.1/1.9)
+    :   Body-style_wagon > 0.0014435: 1.0 (7)
+    Wheel-base <= 0.6463916:
+    :...Fuel-system_spdi > 0.00304254:
+        :...Normalized-losses <= 0.4126918: 3.0 (9.3/4.3)
+        :   Normalized-losses > 0.4126918: 5.0 (5)
+        Fuel-system_spdi <= 0.00304254:
+        :...Normalized-losses <= 0.2852275:
+            :...Make_saab > 0.00051136: 4.0 (3.5)
+            :   Make_saab <= 0.00051136:
+            :   :...Curb-weight <= 0.2966401: 3.0 (15.8/3)
+            :       Curb-weight > 0.2966401: 2.0 (16.5/2.9)
+            Normalized-losses > 0.2852275:
+            :...Aspiration_std <= 0.4994383: 5.0 (2.6)
+                Aspiration_std > 0.4994383:
+                :...Make_volkswagen > 0.5003777: 5.0 (2.3)
+                    Make_volkswagen <= 0.5003777:
+                    :...Make_nissan > 0.5010945: 3.0 (4.6)
+                        Make_nissan <= 0.5010945:
+                        :...Make_plymouth > 0.5027041: 3.0 (3.5)
+                            Make_plymouth <= 0.5027041:
+                            :...Length > 0.727277: 5.0 (4.9/0.8)
+                                Length <= 0.727277:
+                                :...Bore <= 0.4374662: 4.0 (16.1)
+                                    Bore > 0.4374662:
+                                    :...Length <= 0.6644911: 3.0 (6.5)
+                                        Length > 0.6644911: 4.0 (18.2)
+
+-----  Trial 5:  -----
+
+Decision tree:
+
+Make_volvo > 0.4991772:
+:...Horsepower <= 0.5897725: 1.0 (11.5)
+:   Horsepower > 0.5897725: 0.0 (7.1)
+Make_volvo <= 0.4991772:
+:...Wheel-base > 0.6463916:
+    :...Normalized-losses <= 0.1462515: 1.0 (12.6)
+    :   Normalized-losses > 0.1462515: 2.0 (8.5/1.3)
+    Wheel-base <= 0.6463916:
+    :...Fuel-system_spdi > 0.00304254:
+        :...Aspiration_turbo <= 0.4993438: 1.0 (6.7/0.3)
+        :   Aspiration_turbo > 0.4993438: 3.0 (7.5/3.6)
+        Fuel-system_spdi <= 0.00304254:
+        :...Normalized-losses <= 0.2696335:
+            :...Height > 0.5942638: 4.0 (10.1/2.3)
+            :   Height <= 0.5942638:
+            :   :...Horsepower <= 0.1414474: 3.0 (7.1/1.3)
+            :       Horsepower > 0.1414474: 2.0 (15.4)
+            Normalized-losses > 0.2696335:
+            :...Length > 0.7690133: 5.0 (3.5)
+                Length <= 0.7690133:
+                :...Normalized-losses > 0.6698725: 5.0 (6/2.4)
+                    Normalized-losses <= 0.6698725:
+                    :...Make_dodge > 0.5028658: 3.0 (4.1)
+                        Make_dodge <= 0.5028658:
+                        :...Make_mazda > 0.5023969: 3.0 (2.9)
+                            Make_mazda <= 0.5023969:
+                            :...Make_plymouth > 0.5027041: 3.0 (2.8)
+                                Make_plymouth <= 0.5027041:
+                                :...Bore <= 0.4213371: 4.0 (12.6)
+                                    Bore > 0.4213371:
+                                    :...Length <= 0.6644911: 3.0 (6.3)
+                                        Length > 0.6644911: 4.0 (14.2)
+
+-----  Trial 6:  -----
+
+Decision tree:
+
+Make_volvo > 0.4991772:
+:...Horsepower <= 0.5897725: 1.0 (8.9)
+:   Horsepower > 0.5897725: 0.0 (5.5)
+Make_volvo <= 0.4991772:
+:...Num-of-doors_four > 0.5009198:
+    :...Stroke > 0.8685163: 1.0 (21.7/5.1)
+    :   Stroke <= 0.8685163:
+    :   :...Make_plymouth > 0.5007947: 3.0 (2.1)
+    :       Make_plymouth <= 0.5007947:
+    :       :...Engine-type_dohc > 0.00010747: 1.0 (3.4/1.1)
+    :           Engine-type_dohc <= 0.00010747:
+    :           :...Make_volkswagen <= 0.00094492: 2.0 (34.8/4.2)
+    :               Make_volkswagen > 0.00094492: 4.0 (2.8)
+    Num-of-doors_four <= 0.5009198:
+    :...Fuel-type_diesel > 0.5023457: 2.0 (3)
+        Fuel-type_diesel <= 0.5023457:
+        :...Compression-ratio <= 0.06774193: 5.0 (18.1/2.1)
+            Compression-ratio > 0.06774193:
+            :...Make_saab > 0.4991803: 5.0 (2.1)
+                Make_saab <= 0.4991803:
+                :...Make_nissan > 0.5015959: 3.0 (5.9)
+                    Make_nissan <= 0.5015959:
+                    :...Make_mazda <= 0.5023969: 4.0 (27.7/7)
+                        Make_mazda > 0.5023969: 3.0 (3.1)
+
+-----  Trial 7:  -----
+
+Decision tree:
+
+Length > 0.9344049:
+:...Highway-mpg <= 0.1414541: 0.0 (4.3)
+:   Highway-mpg > 0.1414541: 1.0 (12.9)
+Length <= 0.9344049:
+:...Fuel-system_spdi > 0.00304254:
+    :...Normalized-losses <= 0.4126918: 3.0 (9/3.9)
+    :   Normalized-losses > 0.4126918: 5.0 (9.9)
+    Fuel-system_spdi <= 0.00304254:
+    :...Wheel-base > 0.6463916: 2.0 (10.7/5.1)
+        Wheel-base <= 0.6463916:
+        :...Normalized-losses <= 0.2696335:
+            :...Make_saab > 0.00051136: 4.0 (5)
+            :   Make_saab <= 0.00051136:
+            :   :...Curb-weight <= 0.2559682: 3.0 (9.9/2.4)
+            :       Curb-weight > 0.2559682: 2.0 (27.9/3.1)
+            Normalized-losses > 0.2696335:
+            :...Make_dodge > 0.5028658: 3.0 (6.3)
+                Make_dodge <= 0.5028658:
+                :...Make_nissan > 0.5005854: 3.0 (8.3/1.1)
+                    Make_nissan <= 0.5005854:
+                    :...Length > 0.7619851: 5.0 (2.2)
+                        Length <= 0.7619851:
+                        :...Engine-type_dohc > 0.502279: 3.0 (2.1)
+                            Engine-type_dohc <= 0.502279:
+                            :...Fuel-system_2bbl <= 0.999827: 4.0 (17.2/1.1)
+                                Fuel-system_2bbl > 0.999827: 3.0 (13.2/3.7)
+
+-----  Trial 8:  -----
+
+Decision tree:
+
+Wheel-base > 0.6463916:
+:...City-mpg <= 0.06289967: 0.0 (3.4)
+:   City-mpg > 0.06289967: 1.0 (26.8/4.5)
+Wheel-base <= 0.6463916:
+:...Compression-ratio <= 0.06774193:
+    :...Drive-wheels_4wd > 0.501368: 4.0 (2.3/0.1)
+    :   Drive-wheels_4wd <= 0.501368:
+    :   :...Price > 0.1482771: 5.0 (17.5)
+    :       Price <= 0.1482771:
+    :       :...Normalized-losses <= 0.3455497: 3.0 (8.8)
+    :           Normalized-losses > 0.3455497: 1.0 (6.3)
+    Compression-ratio > 0.06774193:
+    :...Normalized-losses <= 0.2696335:
+        :...Bore > 0.7617424: 4.0 (7.1/0.6)
+        :   Bore <= 0.7617424:
+        :   :...Make_volkswagen <= 0.498575: 2.0 (29.7/5.9)
+        :       Make_volkswagen > 0.498575: 4.0 (2.8)
+        Normalized-losses > 0.2696335:
+        :...Make_nissan > 0.5014902: 3.0 (5.7)
+            Make_nissan <= 0.5014902:
+            :...Make_dodge <= 0.5028658: 4.0 (25.3/7.4)
+                Make_dodge > 0.5028658: 3.0 (3.3)
+
+-----  Trial 9:  -----
+
+Decision tree:
+
+Wheel-base > 0.6463916:
+:...City-mpg <= 0.06289967: 0.0 (2.7)
+:   City-mpg > 0.06289967:
+:   :...Engine-type_l <= 0.5015084: 1.0 (20.4/2.8)
+:       Engine-type_l > 0.5015084: 2.0 (5.5)
+Wheel-base <= 0.6463916:
+:...Make_saab > 3.365e-05:
+    :...Num-of-doors_two <= 0.4991392: 4.0 (3.1)
+    :   Num-of-doors_two > 0.4991392: 5.0 (19.1/1.5)
+    Make_saab <= 3.365e-05:
+    :...Fuel-system_spdi > 0.5011877: 1.0 (10.7/5.8)
+        Fuel-system_spdi <= 0.5011877:
+        :...Normalized-losses <= 0.2696335:
+            :...Make_volkswagen > 0: 4.0 (2.1)
+            :   Make_volkswagen <= 0:
+            :   :...Wheel-base <= 0.3119658: 3.0 (6.1/2.1)
+            :       Wheel-base > 0.3119658:
+            :       :...Length <= 0.3544177: 3.0 (3.3)
+            :           Length > 0.3544177: 2.0 (26.7/2.5)
+            Normalized-losses > 0.2696335:
+            :...Make_audi > 0.4998063: 4.0 (3.2)
+                Make_audi <= 0.4998063:
+                :...Bore > 0.7580645: 4.0 (3.5)
+                    Bore <= 0.7580645:
+                    :...Wheel-base <= 0.2521367: 4.0 (6.6/1.5)
+                        Wheel-base > 0.2521367: 3.0 (26.1/4.5)
+
+
+Evaluation on training data (139 cases):
+
+Trial	    Decision Tree   
+-----	  ----------------  
+	  Size      Errors  
+
+   0	    13   14(10.1%)
+   1	    14   16(11.5%)
+   2	    14   15(10.8%)
+   3	    15   23(16.5%)
+   4	    16   25(18.0%)
+   5	    17   10( 7.2%)
+   6	    13   24(17.3%)
+   7	    14   21(15.1%)
+   8	    12   27(19.4%)
+   9	    14   14(10.1%)
+boost	          0( 0.0%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	    24                                  (a): class 0.0
+	          20                            (b): class 1.0
+	                24                      (c): class 2.0
+	                      22                (d): class 3.0
+	                            28          (e): class 4.0
+	                                  21    (f): class 5.0
+
+
+	Attribute usage:
+
+	    100%  Wheel-base
+	    100%  Length
+	    100%  Make_volvo
+	     78%  Normalized-losses
+	     78%  Make_saab
+	     78%  Num-of-doors_four
+	     78%  Make_peugeot
+	     78%  Fuel-system_spdi
+	     67%  Height
+	     67%  Compression-ratio
+	     65%  Make_volkswagen
+	     65%  Make_nissan
+	     63%  City-mpg
+	     63%  Make_plymouth
+	     59%  Make_mercedes-benz
+	     57%  Bore
+	     54%  Make_mazda
+	     54%  Engine-type_l
+	     48%  Engine-type_dohc
+	     44%  Make_mitsubishi
+	     41%  Horsepower
+	     41%  Aspiration_std
+	     40%  Stroke
+	     39%  Make_dodge
+	     39%  Fuel-type_diesel
+	     33%  Make_audi
+	     32%  Curb-weight
+	     26%  Highway-mpg
+	     24%  Make_toyota
+	     24%  Width
+	     24%  Fuel-system_2bbl
+	     23%  Engine-size
+	     23%  Body-style_sedan
+	     21%  Drive-wheels_4wd
+	     20%  Make_honda
+	     20%  Num-of-doors_two
+	     17%  Price
+	     15%  Body-style_wagon
+	      7%  Aspiration_turbo
+
+
+Evaluation on test data (80 cases):
+
+Trial	    Decision Tree   
+-----	  ----------------  
+	  Size      Errors  
+
+   0	    13   42(52.5%)
+   1	    14   24(30.0%)
+   2	    14   32(40.0%)
+   3	    15   39(48.8%)
+   4	    16   38(47.5%)
+   5	    17   29(36.2%)
+   6	    13   38(47.5%)
+   7	    14   31(38.8%)
+   8	    12   44(55.0%)
+   9	    14   30(37.5%)
+boost	         25(31.2%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	           2                            (a): class 0.0
+	     2     8                            (b): class 1.0
+	     1     1    18     1     3          (c): class 2.0
+	           1     5    16           1    (d): class 3.0
+	                 1     2    12          (e): class 4.0
+	           2           2     1     1    (f): class 5.0
+
+
+Time: 0.0 secs

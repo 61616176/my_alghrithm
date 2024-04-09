@@ -1,0 +1,91 @@
+
+C5.0 [Release 2.11a]  	Mon Apr  8 10:45:01 2024
+--------------------
+
+    Options:
+	Application `/home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/2/1/automobile'
+
+Read 78 cases (64 attributes) from /home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/2/1/automobile.data
+
+Decision tree:
+
+Make_volkswagen > 0: 4.0 (4)
+Make_volkswagen <= 0:
+:...Wheel-base <= 0.2931034:
+    :...Bore > 0.6357142: 4.0 (2/1)
+    :   Bore <= 0.6357142:
+    :   :...Wheel-base <= 0.1413793: 4.0 (2)
+    :       Wheel-base > 0.1413793:
+    :       :...Width <= 0.3508771: 3.0 (17)
+    :           Width > 0.3508771: 4.0 (2)
+    Wheel-base > 0.2931034:
+    :...Height <= 0.2938144:
+        :...Num-of-doors_four <= 0: 5.0 (6/1)
+        :   Num-of-doors_four > 0: 3.0 (3/1)
+        Height > 0.2938144:
+        :...Make_saab > 0: 4.0 (3/1)
+            Make_saab <= 0:
+            :...Wheel-base > 0.5241379:
+                :...Normalized-losses <= 0.3253012: 1.0 (11/2)
+                :   Normalized-losses > 0.3253012: 2.0 (3)
+                Wheel-base <= 0.5241379:
+                :...Num-of-doors_four > 0: 2.0 (19/1)
+                    Num-of-doors_four <= 0:
+                    :...Fuel-system_2bbl > 0: 3.0 (2)
+                        Fuel-system_2bbl <= 0:
+                        :...Bore <= 0.6178571: 2.0 (2)
+                            Bore > 0.6178571: 4.0 (2)
+
+
+Evaluation on training data (78 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    14    7( 9.0%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	           1                            (a): class 0.0
+	           9           1                (b): class 1.0
+	           1    23                      (c): class 2.0
+	                      21           1    (d): class 3.0
+	                 1          13          (e): class 4.0
+	                             2     5    (f): class 5.0
+
+
+	Attribute usage:
+
+	    100%  Make_volkswagen
+	     95%  Wheel-base
+	     65%  Height
+	     54%  Make_saab
+	     44%  Num-of-doors_four
+	     35%  Bore
+	     24%  Width
+	     22%  Normalized-losses
+	      8%  Fuel-system_2bbl
+
+
+Evaluation on test data (80 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    14   19(23.8%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	           2                            (a): class 0.0
+	          10                            (b): class 1.0
+	                23     1                (c): class 2.0
+	                 3    19           1    (d): class 3.0
+	                 1     1     8     5    (e): class 4.0
+	                             5     1    (f): class 5.0
+
+
+Time: 0.0 secs

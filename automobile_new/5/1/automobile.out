@@ -1,0 +1,89 @@
+
+C5.0 [Release 2.11a]  	Sun Mar 31 12:57:56 2024
+--------------------
+
+    Options:
+	Application `/home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/5/1/automobile'
+
+Read 139 cases (64 attributes) from /home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/5/1/automobile.data
+
+Decision tree:
+
+Make_volvo > 0.5003656:
+:...Body-style_wagon <= 0.5024097: 0.0 (24)
+:   Body-style_wagon > 0.5024097: 1.0 (4)
+Make_volvo <= 0.5003656:
+:...Num-of-doors_four <= 0.5008528:
+    :...City-mpg <= 0.2421373: 5.0 (20)
+    :   City-mpg > 0.2421373:
+    :   :...Normalized-losses <= 0.2869919: 3.0 (9/1)
+    :       Normalized-losses > 0.2869919:
+    :       :...Make_nissan <= 0.5019125: 4.0 (21/3)
+    :           Make_nissan > 0.5019125: 3.0 (3)
+    Num-of-doors_four > 0.5008528:
+    :...Height <= 0.2307692: 3.0 (6)
+        Height > 0.2307692:
+        :...Wheel-base > 0.5237526:
+            :...Engine-type_l <= 0.5019109: 1.0 (17/1)
+            :   Engine-type_l > 0.5019109: 2.0 (5)
+            Wheel-base <= 0.5237526:
+            :...Fuel-system_2bbl > 0.5028291: 2.0 (15/2)
+                Fuel-system_2bbl <= 0.5028291:
+                :...Width <= 0.4517544: 2.0 (4)
+                    Width > 0.4517544: 4.0 (11/1)
+
+
+Evaluation on training data (139 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    12    8( 5.8%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	    24                                  (a): class 0.0
+	          20                            (b): class 1.0
+	                22     1     1          (c): class 2.0
+	           1     2    17     2          (d): class 3.0
+	                            28          (e): class 4.0
+	                             1    20    (f): class 5.0
+
+
+	Attribute usage:
+
+	    100%  Make_volvo
+	     81%  Num-of-doors_four
+	     43%  Height
+	     39%  City-mpg
+	     38%  Wheel-base
+	     25%  Normalized-losses
+	     22%  Fuel-system_2bbl
+	     21%  Body-style_wagon
+	     19%  Make_nissan
+	     18%  Engine-type_l
+	     12%  Width
+
+
+Evaluation on test data (80 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    12   30(37.5%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	     2                                  (a): class 0.0
+	     5     4           1                (b): class 1.0
+	           2    17     1     2     2    (c): class 2.0
+	           1     5    12     4     1    (d): class 3.0
+	                       4    10     1    (e): class 4.0
+	                             1     5    (f): class 5.0
+
+
+Time: 0.0 secs

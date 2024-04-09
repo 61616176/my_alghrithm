@@ -1,0 +1,91 @@
+
+C5.0 [Release 2.11a]  	Mon Apr  8 10:45:01 2024
+--------------------
+
+    Options:
+	Application `/home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/4/1/automobile'
+
+Read 78 cases (64 attributes) from /home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/4/1/automobile.data
+
+Decision tree:
+
+Make_volvo > 0: 1.0 (4/1)
+Make_volvo <= 0:
+:...Make_saab > 0: 5.0 (4/1)
+    Make_saab <= 0:
+    :...Wheel-base <= 0.2931034:
+        :...Make_honda > 0: 4.0 (2)
+        :   Make_honda <= 0:
+        :   :...Make_subaru > 0: 4.0 (2)
+        :       Make_subaru <= 0:
+        :       :...Width <= 0.08641975: 3.0 (18)
+        :           Width > 0.08641975: 4.0 (3/1)
+        Wheel-base > 0.2931034:
+        :...Make_volkswagen > 0: 4.0 (3)
+            Make_volkswagen <= 0:
+            :...Height <= 0.2712766:
+                :...Highway-mpg <= 0.1805556: 5.0 (3)
+                :   Highway-mpg > 0.1805556:
+                :   :...Width <= 0.2716049: 4.0 (4/1)
+                :       Width > 0.2716049: 3.0 (2)
+                Height > 0.2712766:
+                :...Num-of-cylinders_five > 0: 1.0 (2/1)
+                    Num-of-cylinders_five <= 0:
+                    :...Normalized-losses <= 0.06626506: 1.0 (5/1)
+                        Normalized-losses > 0.06626506: 2.0 (26/2)
+
+
+Evaluation on training data (78 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    13    8(10.3%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	           1                            (a): class 0.0
+	           8     1           1          (b): class 1.0
+	                24                      (c): class 2.0
+	           2          20                (d): class 3.0
+	                 1          12     1    (e): class 4.0
+	                             1     6    (f): class 5.0
+
+
+	Attribute usage:
+
+	    100%  Make_volvo
+	     95%  Make_saab
+	     90%  Wheel-base
+	     58%  Make_volkswagen
+	     54%  Height
+	     42%  Num-of-cylinders_five
+	     40%  Normalized-losses
+	     36%  Width
+	     32%  Make_honda
+	     29%  Make_subaru
+	     13%  Highway-mpg
+
+
+Evaluation on test data (80 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    13   27(33.8%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	           2                            (a): class 0.0
+	           9     1                      (b): class 1.0
+	           1    22     1                (c): class 2.0
+	           1     3    13     6          (d): class 3.0
+	           1     2     2     8     2    (e): class 4.0
+	                       1     4     1    (f): class 5.0
+
+
+Time: 0.0 secs

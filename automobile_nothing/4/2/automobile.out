@@ -1,0 +1,89 @@
+
+C5.0 [Release 2.11a]  	Mon Apr  8 10:45:01 2024
+--------------------
+
+    Options:
+	Application `/home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/4/2/automobile'
+
+Read 79 cases (64 attributes) from /home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/4/2/automobile.data
+
+Decision tree:
+
+Make_volvo > 0:
+:...Normalized-losses <= 0.1780105: 1.0 (5)
+:   Normalized-losses > 0.1780105: 0.0 (2)
+Make_volvo <= 0:
+:...Num-of-doors_four <= 0:
+    :...City-mpg > 0.32812: 3.0 (18/5)
+    :   City-mpg <= 0.32812:
+    :   :...Body-style_hatchback <= 0: 4.0 (3/1)
+    :       Body-style_hatchback > 0: 5.0 (7/1)
+    Num-of-doors_four > 0:
+    :...Make_mercedes-benz > 0: 1.0 (2)
+        Make_mercedes-benz <= 0:
+        :...Make_volkswagen > 0: 4.0 (3)
+            Make_volkswagen <= 0:
+            :...Make_saab > 0: 4.0 (2)
+                Make_saab <= 0:
+                :...Make_audi > 0: 4.0 (3/1)
+                    Make_audi <= 0:
+                    :...Make_mitsubishi > 0: 3.0 (3)
+                        Make_mitsubishi <= 0:
+                        :...Wheel-base <= 0.2723577: 3.0 (6/1)
+                            Wheel-base > 0.2723577: 2.0 (25/3)
+
+
+Evaluation on training data (79 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    12   12(15.2%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	     2                                  (a): class 0.0
+	           7     3                      (b): class 1.0
+	                22     1     1          (c): class 2.0
+	                      21     1          (d): class 3.0
+	                       5     9     1    (e): class 4.0
+	                                   6    (f): class 5.0
+
+
+	Attribute usage:
+
+	    100%  Make_volvo
+	     91%  Num-of-doors_four
+	     56%  Make_mercedes-benz
+	     53%  Make_volkswagen
+	     49%  Make_saab
+	     47%  Make_audi
+	     43%  Make_mitsubishi
+	     39%  Wheel-base
+	     35%  City-mpg
+	     13%  Body-style_hatchback
+	      9%  Normalized-losses
+
+
+Evaluation on test data (79 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    12   25(31.6%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	     1                                  (a): class 0.0
+	           4     5     1                (b): class 1.0
+	                21     2     1          (c): class 2.0
+	                 1    16     2     4    (d): class 3.0
+	                       7     6     1    (e): class 4.0
+	                             1     6    (f): class 5.0
+
+
+Time: 0.0 secs

@@ -1,0 +1,99 @@
+
+C5.0 [Release 2.11a]  	Sun Mar 31 12:57:56 2024
+--------------------
+
+    Options:
+	Application `/home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/3/1/automobile'
+
+Read 138 cases (64 attributes) from /home/liuyi/MC-CCR/MC-CCR/resampled_data/automobile/3/1/automobile.data
+
+Decision tree:
+
+Make_volvo > 0.4997144:
+:...Price <= 0.3658245: 0.0 (23)
+:   Price > 0.3658245: 1.0 (8)
+Make_volvo <= 0.4997144:
+:...Height <= 0.0989573: 5.0 (18)
+    Height > 0.0989573:
+    :...Wheel-base > 0.4941546:
+        :...Engine-type_l > 0.5023211: 2.0 (3)
+        :   Engine-type_l <= 0.5023211:
+        :   :...Num-of-doors_two <= 0.5016758: 1.0 (13/1)
+        :       Num-of-doors_two > 0.5016758: 5.0 (3)
+        Wheel-base <= 0.4941546:
+        :...Make_volkswagen > 5.231e-05: 4.0 (13)
+            Make_volkswagen <= 5.231e-05:
+            :...Highway-mpg > 0.4677419:
+                :...Make_mitsubishi <= 0.4993069: 3.0 (19/1)
+                :   Make_mitsubishi > 0.4993069: 4.0 (3)
+                Highway-mpg <= 0.4677419:
+                :...Body-style_hardtop > 0: 4.0 (3)
+                    Body-style_hardtop <= 0:
+                    :...Make_audi > 0: 4.0 (3)
+                        Make_audi <= 0:
+                        :...Make_saab > 0.00141687: 4.0 (2)
+                            Make_saab <= 0.00141687:
+                            :...Wheel-base <= 0.2463235:
+                                :...Normalized-losses <= 0.2045455: 4.0 (2)
+                                :   Normalized-losses > 0.2045455: 3.0 (2)
+                                Wheel-base > 0.2463235:
+                                :...Height <= 0.2548077: 3.0 (2)
+                                    Height > 0.2548077: 2.0 (21/1)
+
+
+Evaluation on training data (138 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    16    3( 2.2%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	    23                                  (a): class 0.0
+	          20                            (b): class 1.0
+	                23                      (c): class 2.0
+	           1          22                (d): class 3.0
+	                 1     1    26          (e): class 4.0
+	                                  21    (f): class 5.0
+
+
+	Attribute usage:
+
+	    100%  Make_volvo
+	     79%  Height
+	     67%  Wheel-base
+	     52%  Make_volkswagen
+	     48%  Highway-mpg
+	     36%  Body-style_hardtop
+	     34%  Make_audi
+	     32%  Make_saab
+	     23%  Price
+	     18%  Make_mitsubishi
+	     16%  Engine-type_l
+	     14%  Num-of-doors_two
+	      9%  Normalized-losses
+
+
+Evaluation on test data (80 cases):
+
+	    Decision Tree   
+	  ----------------  
+	  Size      Errors  
+
+	    16   29(36.2%)   <<
+
+
+	   (a)   (b)   (c)   (d)   (e)   (f)    <-classified as
+	  ----  ----  ----  ----  ----  ----
+	           2                            (a): class 0.0
+	     1     8           1                (b): class 1.0
+	           2    14     7           1    (c): class 2.0
+	           1     2    19           1    (d): class 3.0
+	                 1     5     9          (e): class 4.0
+	                       1     4     1    (f): class 5.0
+
+
+Time: 0.0 secs
